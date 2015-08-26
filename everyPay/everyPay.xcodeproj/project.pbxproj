@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		535F0B661B8AFA2100DA196C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B651B8AFA2100DA196C /* main.m */; };
+		535F0B691B8AFA2100DA196C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B681B8AFA2100DA196C /* AppDelegate.m */; };
+		535F0B711B8AFA2100DA196C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 535F0B701B8AFA2100DA196C /* Images.xcassets */; };
+		535F0B801B8AFA2200DA196C /* everyPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B7F1B8AFA2200DA196C /* everyPayTests.m */; };
+		535F0B8D1B8AFADF00DA196C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B8B1B8AFADF00DA196C /* ViewController.m */; };
+		535F0B8E1B8AFADF00DA196C /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535F0B8C1B8AFADF00DA196C /* ViewController.xib */; };
+		535F0B921B8AFCB600DA196C /* EPCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B911B8AFCB600DA196C /* EPCard.m */; };
+		535F0B961B8B083200DA196C /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B951B8B083200DA196C /* NSString+Additions.m */; };
+		535F0B9A1B8B0C4900DA196C /* Luhn.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B991B8B0C4900DA196C /* Luhn.m */; };
+		535F0B9D1B8B166C00DA196C /* NSError+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0B9C1B8B166C00DA196C /* NSError+Additions.m */; };
+		535F0BA01B8B269A00DA196C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 535F0BA21B8B269A00DA196C /* Localizable.strings */; };
+		535F0BA61B8B2ABC00DA196C /* luhnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BA51B8B2ABC00DA196C /* luhnTests.m */; };
+		535F0BA81B8B2DBC00DA196C /* cardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BA71B8B2DBC00DA196C /* cardTests.m */; };
+		535F0BAB1B8B36E100DA196C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BAA1B8B36E100DA196C /* Constants.m */; };
+		535F0BB21B8B3CFD00DA196C /* EPApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BB11B8B3CFD00DA196C /* EPApi.m */; };
+		535F0BB51B8B424400DA196C /* EPMerchantApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BB41B8B424400DA196C /* EPMerchantApi.m */; };
+		535F0BB81B8B591500DA196C /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BB71B8B591500DA196C /* NSDate+Additions.m */; };
+		535F0BBB1B8C43A100DA196C /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BBA1B8C43A100DA196C /* DeviceInfo.m */; };
+		535F0BBE1B8C5D1900DA196C /* ErrorExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BBD1B8C5D1900DA196C /* ErrorExtractor.m */; };
+		535F0BC31B8C692100DA196C /* EPCardInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BC11B8C692100DA196C /* EPCardInfoViewController.m */; };
+		535F0BC41B8C692100DA196C /* EPCardInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 535F0BC21B8C692100DA196C /* EPCardInfoViewController.xib */; };
+		535F0BC61B8C951900DA196C /* stringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BC51B8C951900DA196C /* stringTests.m */; };
+		535F0BC81B8C97BD00DA196C /* dateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BC71B8C97BD00DA196C /* dateTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		535F0B7A1B8AFA2200DA196C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 535F0B581B8AFA2100DA196C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 535F0B5F1B8AFA2100DA196C;
+			remoteInfo = everyPay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		535F0B601B8AFA2100DA196C /* everyPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everyPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		535F0B641B8AFA2100DA196C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535F0B651B8AFA2100DA196C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		535F0B671B8AFA2100DA196C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		535F0B681B8AFA2100DA196C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		535F0B701B8AFA2100DA196C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		535F0B791B8AFA2200DA196C /* everyPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = everyPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		535F0B7E1B8AFA2200DA196C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		535F0B7F1B8AFA2200DA196C /* everyPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = everyPayTests.m; sourceTree = "<group>"; };
+		535F0B8A1B8AFADF00DA196C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		535F0B8B1B8AFADF00DA196C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		535F0B8C1B8AFADF00DA196C /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		535F0B901B8AFCB600DA196C /* EPCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPCard.h; path = ../sdk/model/EPCard.h; sourceTree = "<group>"; };
+		535F0B911B8AFCB600DA196C /* EPCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPCard.m; path = ../sdk/model/EPCard.m; sourceTree = "<group>"; };
+		535F0B951B8B083200DA196C /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "../sdk/category/NSString+Additions.m"; sourceTree = "<group>"; };
+		535F0B981B8B0C4900DA196C /* Luhn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Luhn.h; path = ../sdk/utility/Luhn.h; sourceTree = "<group>"; };
+		535F0B991B8B0C4900DA196C /* Luhn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Luhn.m; path = ../sdk/utility/Luhn.m; sourceTree = "<group>"; };
+		535F0B9B1B8B166C00DA196C /* NSError+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+Additions.h"; path = "../sdk/category/NSError+Additions.h"; sourceTree = "<group>"; };
+		535F0B9C1B8B166C00DA196C /* NSError+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+Additions.m"; path = "../sdk/category/NSError+Additions.m"; sourceTree = "<group>"; };
+		535F0BA41B8B26AD00DA196C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		535F0BA51B8B2ABC00DA196C /* luhnTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = luhnTests.m; sourceTree = "<group>"; };
+		535F0BA71B8B2DBC00DA196C /* cardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cardTests.m; sourceTree = "<group>"; };
+		535F0BA91B8B36E100DA196C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../sdk/Constants.h; sourceTree = "<group>"; };
+		535F0BAA1B8B36E100DA196C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../sdk/Constants.m; sourceTree = "<group>"; };
+		535F0BB01B8B3CFD00DA196C /* EPApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPApi.h; path = ../sdk/api/EPApi.h; sourceTree = "<group>"; };
+		535F0BB11B8B3CFD00DA196C /* EPApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPApi.m; path = ../sdk/api/EPApi.m; sourceTree = "<group>"; };
+		535F0BB31B8B424400DA196C /* EPMerchantApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPMerchantApi.h; path = ../sdk/api/EPMerchantApi.h; sourceTree = "<group>"; };
+		535F0BB41B8B424400DA196C /* EPMerchantApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPMerchantApi.m; path = ../sdk/api/EPMerchantApi.m; sourceTree = "<group>"; };
+		535F0BB61B8B591500DA196C /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Additions.h"; path = "../sdk/category/NSDate+Additions.h"; sourceTree = "<group>"; };
+		535F0BB71B8B591500DA196C /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Additions.m"; path = "../sdk/category/NSDate+Additions.m"; sourceTree = "<group>"; };
+		535F0BB91B8C43A100DA196C /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeviceInfo.h; path = ../sdk/utility/DeviceInfo.h; sourceTree = "<group>"; };
+		535F0BBA1B8C43A100DA196C /* DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeviceInfo.m; path = ../sdk/utility/DeviceInfo.m; sourceTree = "<group>"; };
+		535F0BBC1B8C5D1900DA196C /* ErrorExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorExtractor.h; path = ../sdk/utility/ErrorExtractor.h; sourceTree = "<group>"; };
+		535F0BBD1B8C5D1900DA196C /* ErrorExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorExtractor.m; path = ../sdk/utility/ErrorExtractor.m; sourceTree = "<group>"; };
+		535F0BC01B8C692100DA196C /* EPCardInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPCardInfoViewController.h; path = ../sdk/viewController/EPCardInfoViewController.h; sourceTree = "<group>"; };
+		535F0BC11B8C692100DA196C /* EPCardInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPCardInfoViewController.m; path = ../sdk/viewController/EPCardInfoViewController.m; sourceTree = "<group>"; };
+		535F0BC21B8C692100DA196C /* EPCardInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPCardInfoViewController.xib; path = ../sdk/viewController/EPCardInfoViewController.xib; sourceTree = "<group>"; };
+		535F0BC51B8C951900DA196C /* stringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stringTests.m; sourceTree = "<group>"; };
+		535F0BC71B8C97BD00DA196C /* dateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dateTests.m; sourceTree = "<group>"; };
+		535F0BC91B8DC12E00DA196C /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		535F0B5D1B8AFA2100DA196C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535F0B761B8AFA2200DA196C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		535F0B571B8AFA2100DA196C = {
+			isa = PBXGroup;
+			children = (
+				535F0B891B8AFAB900DA196C /* SDK */,
+				535F0B621B8AFA2100DA196C /* everyPayDemo */,
+				535F0B7C1B8AFA2200DA196C /* everyPayTests */,
+				535F0B611B8AFA2100DA196C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		535F0B611B8AFA2100DA196C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B601B8AFA2100DA196C /* everyPay.app */,
+				535F0B791B8AFA2200DA196C /* everyPayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		535F0B621B8AFA2100DA196C /* everyPayDemo */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B671B8AFA2100DA196C /* AppDelegate.h */,
+				535F0B681B8AFA2100DA196C /* AppDelegate.m */,
+				535F0B701B8AFA2100DA196C /* Images.xcassets */,
+				535F0B631B8AFA2100DA196C /* Supporting Files */,
+				535F0B8A1B8AFADF00DA196C /* ViewController.h */,
+				535F0B8B1B8AFADF00DA196C /* ViewController.m */,
+				535F0B8C1B8AFADF00DA196C /* ViewController.xib */,
+			);
+			name = everyPayDemo;
+			path = everyPay;
+			sourceTree = "<group>";
+		};
+		535F0B631B8AFA2100DA196C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B641B8AFA2100DA196C /* Info.plist */,
+				535F0B651B8AFA2100DA196C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		535F0B7C1B8AFA2200DA196C /* everyPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				535F0BC71B8C97BD00DA196C /* dateTests.m */,
+				535F0BC51B8C951900DA196C /* stringTests.m */,
+				535F0BA71B8B2DBC00DA196C /* cardTests.m */,
+				535F0BA51B8B2ABC00DA196C /* luhnTests.m */,
+				535F0B7F1B8AFA2200DA196C /* everyPayTests.m */,
+				535F0B7D1B8AFA2200DA196C /* Supporting Files */,
+			);
+			path = everyPayTests;
+			sourceTree = "<group>";
+		};
+		535F0B7D1B8AFA2200DA196C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B7E1B8AFA2200DA196C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		535F0B891B8AFAB900DA196C /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				535F0BBF1B8C68BF00DA196C /* ViewController */,
+				535F0BAC1B8B37D700DA196C /* API */,
+				535F0B971B8B0BCC00DA196C /* Utility */,
+				535F0B931B8B06D100DA196C /* Category */,
+				535F0B8F1B8AFC5F00DA196C /* Model */,
+				535F0BA21B8B269A00DA196C /* Localizable.strings */,
+				535F0BA91B8B36E100DA196C /* Constants.h */,
+				535F0BAA1B8B36E100DA196C /* Constants.m */,
+			);
+			name = SDK;
+			path = everyPay;
+			sourceTree = "<group>";
+		};
+		535F0B8F1B8AFC5F00DA196C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B901B8AFCB600DA196C /* EPCard.h */,
+				535F0B911B8AFCB600DA196C /* EPCard.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		535F0B931B8B06D100DA196C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				535F0BC91B8DC12E00DA196C /* NSString+Additions.h */,
+				535F0B951B8B083200DA196C /* NSString+Additions.m */,
+				535F0B9B1B8B166C00DA196C /* NSError+Additions.h */,
+				535F0B9C1B8B166C00DA196C /* NSError+Additions.m */,
+				535F0BB61B8B591500DA196C /* NSDate+Additions.h */,
+				535F0BB71B8B591500DA196C /* NSDate+Additions.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		535F0B971B8B0BCC00DA196C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				535F0B981B8B0C4900DA196C /* Luhn.h */,
+				535F0B991B8B0C4900DA196C /* Luhn.m */,
+				535F0BB91B8C43A100DA196C /* DeviceInfo.h */,
+				535F0BBA1B8C43A100DA196C /* DeviceInfo.m */,
+				535F0BBC1B8C5D1900DA196C /* ErrorExtractor.h */,
+				535F0BBD1B8C5D1900DA196C /* ErrorExtractor.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		535F0BAC1B8B37D700DA196C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				535F0BB01B8B3CFD00DA196C /* EPApi.h */,
+				535F0BB11B8B3CFD00DA196C /* EPApi.m */,
+				535F0BB31B8B424400DA196C /* EPMerchantApi.h */,
+				535F0BB41B8B424400DA196C /* EPMerchantApi.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		535F0BBF1B8C68BF00DA196C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				535F0BC01B8C692100DA196C /* EPCardInfoViewController.h */,
+				535F0BC11B8C692100DA196C /* EPCardInfoViewController.m */,
+				535F0BC21B8C692100DA196C /* EPCardInfoViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		535F0B5F1B8AFA2100DA196C /* everyPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535F0B831B8AFA2200DA196C /* Build configuration list for PBXNativeTarget "everyPay" */;
+			buildPhases = (
+				535F0B5C1B8AFA2100DA196C /* Sources */,
+				535F0B5D1B8AFA2100DA196C /* Frameworks */,
+				535F0B5E1B8AFA2100DA196C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = everyPay;
+			productName = everyPay;
+			productReference = 535F0B601B8AFA2100DA196C /* everyPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		535F0B781B8AFA2200DA196C /* everyPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 535F0B861B8AFA2200DA196C /* Build configuration list for PBXNativeTarget "everyPayTests" */;
+			buildPhases = (
+				535F0B751B8AFA2200DA196C /* Sources */,
+				535F0B761B8AFA2200DA196C /* Frameworks */,
+				535F0B771B8AFA2200DA196C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				535F0B7B1B8AFA2200DA196C /* PBXTargetDependency */,
+			);
+			name = everyPayTests;
+			productName = everyPayTests;
+			productReference = 535F0B791B8AFA2200DA196C /* everyPayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		535F0B581B8AFA2100DA196C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = MobiLab;
+				TargetAttributes = {
+					535F0B5F1B8AFA2100DA196C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					535F0B781B8AFA2200DA196C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 535F0B5F1B8AFA2100DA196C;
+					};
+				};
+			};
+			buildConfigurationList = 535F0B5B1B8AFA2100DA196C /* Build configuration list for PBXProject "everyPay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 535F0B571B8AFA2100DA196C;
+			productRefGroup = 535F0B611B8AFA2100DA196C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				535F0B5F1B8AFA2100DA196C /* everyPay */,
+				535F0B781B8AFA2200DA196C /* everyPayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		535F0B5E1B8AFA2100DA196C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535F0BC41B8C692100DA196C /* EPCardInfoViewController.xib in Resources */,
+				535F0B8E1B8AFADF00DA196C /* ViewController.xib in Resources */,
+				535F0BA01B8B269A00DA196C /* Localizable.strings in Resources */,
+				535F0B711B8AFA2100DA196C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535F0B771B8AFA2200DA196C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		535F0B5C1B8AFA2100DA196C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535F0B8D1B8AFADF00DA196C /* ViewController.m in Sources */,
+				535F0BB51B8B424400DA196C /* EPMerchantApi.m in Sources */,
+				535F0B691B8AFA2100DA196C /* AppDelegate.m in Sources */,
+				535F0BBE1B8C5D1900DA196C /* ErrorExtractor.m in Sources */,
+				535F0BBB1B8C43A100DA196C /* DeviceInfo.m in Sources */,
+				535F0B661B8AFA2100DA196C /* main.m in Sources */,
+				535F0BC31B8C692100DA196C /* EPCardInfoViewController.m in Sources */,
+				535F0BB81B8B591500DA196C /* NSDate+Additions.m in Sources */,
+				535F0BAB1B8B36E100DA196C /* Constants.m in Sources */,
+				535F0B961B8B083200DA196C /* NSString+Additions.m in Sources */,
+				535F0B921B8AFCB600DA196C /* EPCard.m in Sources */,
+				535F0BB21B8B3CFD00DA196C /* EPApi.m in Sources */,
+				535F0B9D1B8B166C00DA196C /* NSError+Additions.m in Sources */,
+				535F0B9A1B8B0C4900DA196C /* Luhn.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		535F0B751B8AFA2200DA196C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535F0BA61B8B2ABC00DA196C /* luhnTests.m in Sources */,
+				535F0BA81B8B2DBC00DA196C /* cardTests.m in Sources */,
+				535F0BC61B8C951900DA196C /* stringTests.m in Sources */,
+				535F0B801B8AFA2200DA196C /* everyPayTests.m in Sources */,
+				535F0BC81B8C97BD00DA196C /* dateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		535F0B7B1B8AFA2200DA196C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 535F0B5F1B8AFA2100DA196C /* everyPay */;
+			targetProxy = 535F0B7A1B8AFA2200DA196C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		535F0BA21B8B269A00DA196C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				535F0BA41B8B26AD00DA196C /* Base */,
+			);
+			name = Localizable.strings;
+			path = ../sdk;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		535F0B811B8AFA2200DA196C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		535F0B821B8AFA2200DA196C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		535F0B841B8AFA2200DA196C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = everyPay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		535F0B851B8AFA2200DA196C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = everyPay/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		535F0B871B8AFA2200DA196C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = everyPayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/everyPay.app/everyPay";
+			};
+			name = Debug;
+		};
+		535F0B881B8AFA2200DA196C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = everyPayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/everyPay.app/everyPay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		535F0B5B1B8AFA2100DA196C /* Build configuration list for PBXProject "everyPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535F0B811B8AFA2200DA196C /* Debug */,
+				535F0B821B8AFA2200DA196C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535F0B831B8AFA2200DA196C /* Build configuration list for PBXNativeTarget "everyPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535F0B841B8AFA2200DA196C /* Debug */,
+				535F0B851B8AFA2200DA196C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		535F0B861B8AFA2200DA196C /* Build configuration list for PBXNativeTarget "everyPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535F0B871B8AFA2200DA196C /* Debug */,
+				535F0B881B8AFA2200DA196C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 535F0B581B8AFA2100DA196C /* Project object */;
+}
