@@ -36,7 +36,7 @@ Modify kEveryPayApiLive and kEveryPayApiTesting URLs in Constants.h to your need
 
 ### Get card information
 
-Open a EPCardInfoViewController from your viewcontroller. Let you viewcontroller implement EPCardViewControllerDelegate method `cardInfoViewController:didEnterInfoForCard:`.
+Open a EPCardInfoViewController from your viewcontroller. Let your viewcontroller implement EPCardViewControllerDelegate method `cardInfoViewController:didEnterInfoForCard:`.
 After user has entered all needed data this delegate method will be called with a validated EPCard object.
 
 ### Send card, your EveryPay credentials and needed security information to EveryPay server
@@ -44,17 +44,11 @@ After user has entered all needed data this delegate method will be called with 
 Call `sendCard:withMerchantInfo:withSuccess:andError:`, where `merchantinfo` is dictionary containing your EveryPay username, account, ip and security info:
 ```
 "account_id" = EUR1;
-
 "api_username" = apiuserame;
-
 hmac = 6c893c8642176b401e918ba61a47123456780c1d;
-
 nonce = b58a1ff58cd9817347e206f30fcb82d5;
-
 timestamp = 1440506937;
-
 "user_ip" = "100.100.100.100";
-
 ```
 
 Success block will be called with encrypted token, failure block will contain array of NSError objects. Both blocks will be called on main thread.
@@ -68,5 +62,4 @@ To provide a replacement, rewrite methods in EPMerchantApi class.
 
 If the EveryPay card input form does not match your requirements, or if you wish to add custom branding beyond the configuration options, then you can create a custom one. There are two requirements for a custom card form:
 
-* It should construct a [EPCard](LINK TO EPCARD CLASS). The Card model can also be used to validate the inputs.
-* WHAT INFO IS NEEDED FOR IOS DEVICES AS DEVICEINFO??
+* It should construct a [EPCard](https://github.com/UnifiedPaymentSolutions/everypay-ios/blob/master/everyPay/sdk/model/EPCard.h). The Card model can also be used to validate the inputs.
