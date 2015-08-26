@@ -44,14 +44,6 @@ const NSInteger kMaxYear = 2022;
 
 - (IBAction)doneTapped:(id)sender {
     
-    // For debugging enter sample info if card number is empty
-    if ([self.number.text length] == 0) {
-        [self.number setText:@"5450339000000014"];
-        [self.cvc setText:@"432"];
-        [self.name setText:@"Lauri's card"];
-        self.selectedDate = [NSDate dateWithYear:2015 andMonth:9];
-    }
-    
     EPCard *card = [[EPCard alloc] initWithName:self.name.text number:self.number.text expirationDate:self.selectedDate andCVC:self.cvc.text];
     
     NSError *validationError = [card validateCard];
