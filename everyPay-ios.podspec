@@ -22,8 +22,8 @@ Pod::Spec.new do |s|
   s.author             = { "Lauri Eskor" => "lauri.eskor@lab.mobi" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/UnifiedPaymentSolutions/everypay-ios.git", :tag => "0.0.1" }
-  s.source_files  = "everyPay/sdk", "everyPay/sdk/**/*.{h,m}"
-#  s.resources    = "everyPay/sdk/*"
+  s.source_files  = "everyPay/sdk/**/*"
+  s.resources    = "everyPay/sdk/viewController/*.xib", "everyPay/sdk/Base.lproj/*.strings"
   s.requires_arc = true
 
 end
