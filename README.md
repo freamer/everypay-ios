@@ -34,10 +34,30 @@ Add 'everyPay-ios' to podfile.
 
 Modify kEveryPayApiLive and kEveryPayApiTesting URLs in Constants.h to your needs.
 
+```objectivec
+NSString *const kEveryPayApiTesting = YOUR_TESTING_URL;
+NSString *const kEveryPayApiLive = YOUR_LIVE_URL;
+```
+
 ### Get card information
 
-Open a EPCardInfoViewController from your viewcontroller. Let your viewcontroller implement EPCardViewControllerDelegate method `cardInfoViewController:didEnterInfoForCard:`.
+Open a EPCardInfoViewController from your viewcontroller:
+
+```objectivec
+	EPCardInfoViewController *cardInfoViewController = [[EPCardInfoViewController alloc] initWithNibName:NSStringFromClass([EPCardInfoViewController class]) bundle:nil];
+    [cardInfoViewController setDelegate:self];
+    [self presentViewController:cardInfoViewController animated:YES completion:nil];
+```
+
+Let your viewcontroller implement EPCardViewControllerDelegate method `cardInfoViewController:didEnterInfoForCard:`.
 After user has entered all needed data this delegate method will be called with a validated EPCard object.
+
+```objectivec
+- (void)cardInfoViewController:(UIViewController *)controller didEnterInfoForCard:(EPCard *)card {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self sendCardInfoToMerchant:card];
+}
+```
 
 ### Send card, your EveryPay credentials and needed security information to EveryPay server
 
@@ -51,10 +71,6 @@ timestamp = 1440506937;
 "user_ip" = "100.100.100.100";
 ```
 
-Success block will be called with encrypted token, failure block will contain array of NSError objects. Both blocks will be called on main thread.
-
-Example:
-
 ```objectivec
 [EPApi sendCard:card withMerchantInfo:merchantInfo withSuccess:^(NSString *token) {
         [self payWithToken:token andMerchantInfo:merchantInfo];
@@ -62,6 +78,8 @@ Example:
         [self showAlertWithError:[errors firstObject]];
     }];
 ```
+
+Success block will be called with encrypted token, failure block will contain array of NSError objects. Both blocks will be called on main thread.
 
 ## Customising the app <-> merchant server communication steps
 
