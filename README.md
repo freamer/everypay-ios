@@ -53,6 +53,16 @@ timestamp = 1440506937;
 
 Success block will be called with encrypted token, failure block will contain array of NSError objects. Both blocks will be called on main thread.
 
+Example:
+
+```objectivec
+[EPApi sendCard:card withMerchantInfo:merchantInfo withSuccess:^(NSString *token) {
+        [self payWithToken:token andMerchantInfo:merchantInfo];
+    } andError:^(NSArray *errors) {
+        [self showAlertWithError:[errors firstObject]];
+    }];
+```
+
 ## Customising the app <-> merchant server communication steps
 
 The SDK includes example implementation for the app - merchant API calls, with the minimal required data for a payment. However, most apps using EveryPay will want to replace the communication step between the app and your server - for example to add your own user accounts, save shopping baskets or subscription plans.
