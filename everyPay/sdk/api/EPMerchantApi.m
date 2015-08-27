@@ -14,15 +14,6 @@ NSString *const kSendPaymentPath = @"/merchant_mobile_payments/pay";
 
 @implementation EPMerchantApi
 
-+ (NSURLSession *)sharedSession {
-    static NSURLSession *session = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    });
-    return session;
-}
-
 + (void)getMerchantDataWithSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure {
     NSURL *merchantApiBaseUrl = [NSURL URLWithString:kMercantApiTesting];
     NSURL *url = [NSURL URLWithString:kGetMerchantInfoPath relativeToURL:merchantApiBaseUrl];
@@ -34,7 +25,7 @@ NSString *const kSendPaymentPath = @"/merchant_mobile_payments/pay";
 
     NSData *deviceInfo = [DeviceInfo deviceInfoData];
     
-    NSURLSessionUploadTask *uploadTask = [[EPMerchantApi sharedSession] uploadTaskWithRequest:request fromData:deviceInfo completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionUploadTask *uploadTask = [[NSURLSession sharedSession] uploadTaskWithRequest:request fromData:deviceInfo completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"Request completed with response\n %@", response);
 
@@ -69,7 +60,7 @@ NSString *const kSendPaymentPath = @"/merchant_mobile_payments/pay";
     NSError *jsonConversionError = nil;
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestDictionary options:kNilOptions error:&jsonConversionError];
     
-    NSURLSessionUploadTask *uploadTask = [[EPMerchantApi sharedSession] uploadTaskWithRequest:request fromData:requestData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionUploadTask *uploadTask = [[NSURLSession sharedSession] uploadTaskWithRequest:request fromData:requestData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         NSLog(@"Request completed with response\n %@", response);
         

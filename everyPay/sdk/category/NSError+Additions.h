@@ -11,6 +11,10 @@
 
 @interface NSError (Additions)
 
+/** 
+ Compose a NSError object from description and code.
+ Description will be localized and set as NSLocalizedDescription of error object.
+ */
 + (NSError *)errorWithDescription:(NSString *)descrpition andCode:(NSInteger)errorCode;
 
 @end

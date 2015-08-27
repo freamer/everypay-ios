@@ -19,6 +19,10 @@ typedef NS_ENUM(NSInteger, OLCreditCardType) {
     OLCreditCardTypeInvalid
 };
 
+/** 
+ Helper class for checking and identifying credit card numbers.
+ */
+
 @interface Luhn : NSObject
 
 + (OLCreditCardType) typeFromString:(NSString *) string;

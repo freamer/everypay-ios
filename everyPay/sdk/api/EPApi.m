@@ -15,15 +15,6 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
 
 @implementation EPApi
 
-+ (NSURLSession *)sharedSession {
-    static NSURLSession *session = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    });
-    return session;
-}
-
 + (void)sendCard:(EPCard *)card withMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(StringSuccessBlock)success andError:(ArrayBlock)failure {
     NSURL *baseApiUrl = [NSURL URLWithString:kEveryPayApiTesting];
     NSURL *url = [NSURL URLWithString:kSendCardDetailsPath relativeToURL:baseApiUrl];
@@ -42,7 +33,7 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
     NSLog(@"Start request %@\n", request);
     NSLog(@"Request body %@\n", requestDictionary);
     
-    NSURLSessionUploadTask *uploadTask = [[EPApi sharedSession] uploadTaskWithRequest:request fromData:requestData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    NSURLSessionUploadTask *uploadTask = [[NSURLSession sharedSession] uploadTaskWithRequest:request fromData:requestData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"Request completed with response\n %@", response);
         if (error) {
             failure(@[error]);
@@ -63,9 +54,9 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
                         /** 
                          Response dictionary: 
                          {
-                         "encrypted_payment_instrument" =     {
-                         "cc_token_encrypted" = "QEVuQwBAEAAcXJQdBNP2fcVbANPoc+KdE9flBsC4O8hZQPut4MLjMKAVjTt9JDI8eqTpYiDH9dE=-1440501330";
-                         };
+                            "encrypted_payment_instrument" = {
+                                "cc_token_encrypted" = "QEVuQwBAEAAcXJQdBNP2fcVbANPoc+KdE9flBsC4O8hZQPut4MLjMKAVjTt9JDI8eqTpYiDH9dE=-1440501330";
+                            };
                          }
                          */
                         NSDictionary *tokenDictionary = [responseDictionary objectForKey:kKeyEncryptedPaymentInstrument];

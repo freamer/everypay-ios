@@ -7,7 +7,7 @@
 //
 
 /** 
- Helper for extracting errors from EveryPay server response
+ Helper for extracting errors from EveryPay server response.
  */
 
 #import <Foundation/Foundation.h>

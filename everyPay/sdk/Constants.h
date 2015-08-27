@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Define constants for global use
+ */
+
+// Network return blocks
 typedef void (^DictionarySuccessBlock)(NSDictionary *dictionary);
 typedef void (^StringSuccessBlock)(NSString *string);
 typedef void (^FailureBlock)(NSError *error);
 typedef void (^ArrayBlock)(NSArray *array);
-
-/** 
- Define constants for global use
- */
 
 // base urls
 extern NSString *const kEveryPayApiTesting;

@@ -9,11 +9,21 @@
 #import <Foundation/Foundation.h>
 
 /**
- Class for collecting device info.
+ Class for collecting device info. Currently responds with dummy data.
  */
+
 @interface DeviceInfo : NSObject
 
+/** 
+ Collects different device data.
+ @return NSData with device info
+ */
 + (NSData *)deviceInfoData;
+
+/** 
+ Collects different device data.
+ @return NSDictionary with device data
+ */
 + (NSDictionary *)deviceInfoDictionary;
 
 @end

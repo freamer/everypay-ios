@@ -11,7 +11,7 @@
 @interface NSDate (Additions)
 
 /** 
- Return date composed from year and month
+ Return date composed from year and month.
  */
 + (NSDate *)dateWithYear:(NSInteger)year andMonth:(NSInteger)month;
 
@@ -22,7 +22,7 @@
 - (BOOL)dateHasPassed;
 
 /** 
- Return string with format 9/2015
+ Return string with format 9/2015.
  */
 - (NSString *)expirationString;
 
