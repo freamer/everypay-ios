@@ -1,3 +1,6 @@
+## 0.0.5 (28.08.2015)
+#### More code samples to readme
+
 ## 0.0.4 (28.08.2015)
 #### Better documentation
 
