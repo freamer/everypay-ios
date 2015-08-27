@@ -3,9 +3,10 @@
 > Warning: the iOS SDK is still in an alpha stage. Significant API changes may happen before a 1.0 release.
 
 * [Overview](https://github.com/UnifiedPaymentSolutions/everypay-ios#overview)
-* [Integrating the SDK](https://github.com/UnifiedPaymentSolutions/everypay-ios#integrating-the-SDK)
+* [Integrating the SDK](https://github.com/UnifiedPaymentSolutions/everypay-ios#integrating-the-sdk)
   * [Configure the SDK parameters](https://github.com/UnifiedPaymentSolutions/everypay-ios#configure-the-sdk-parameters)
-  * [Start the payment flow](https://github.com/UnifiedPaymentSolutions/everypay-ios#start-the-payment-flow)
+  * [Get card information](https://github.com/UnifiedPaymentSolutions/everypay-ios#get-card-information)
+  * [Send card information to EveryPay server](https://github.com/UnifiedPaymentSolutions/everypay-ios#send-card-your-everypay-credentials-and-needed-security-information-to-everypay-server)
 * [Customising the app <-> merchant server communication steps](https://github.com/UnifiedPaymentSolutions/everypay-ios#customising-the-app---merchant-server-communication-steps)
 * [Customising the card input form](https://github.com/UnifiedPaymentSolutions/everypay-ios#customising-the-card-input-form)
 
