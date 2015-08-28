@@ -16,14 +16,9 @@
 
 /** 
  Collects different device data.
+ Collects device model, os and kernel versions.
  @return NSData with device info
  */
 + (NSData *)deviceInfoData;
-
-/** 
- Collects different device data.
- @return NSDictionary with device data
- */
-+ (NSDictionary *)deviceInfoDictionary;
 
 @end
