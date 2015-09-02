@@ -3,6 +3,7 @@
 > Warning: the iOS SDK is still in an alpha stage. Significant API changes may happen before a 1.0 release.
 
 * [Overview](https://github.com/UnifiedPaymentSolutions/everypay-ios#overview)
+* [Requirements](https://github.com/UnifiedPaymentSolutions/everypay-ios#requirements)
 * [Integrating the SDK](https://github.com/UnifiedPaymentSolutions/everypay-ios#integrating-the-sdk)
   * [Configure the SDK parameters](https://github.com/UnifiedPaymentSolutions/everypay-ios#configure-the-sdk-parameters)
   * [Get card information](https://github.com/UnifiedPaymentSolutions/everypay-ios#get-card-information)
@@ -20,6 +21,10 @@ The payment process happens in four steps.
 4. API call to the merchant (your) server with the encrypted card token. The merchant can decrypt the card token with a server-side EveryPay API call, and make a payment immediately or save it for later.
 
 Example implementation is provided for steps 2 and 4, even if they are likely to be replaced in most apps. EPCardInfoViewController can be replaced or modified for step 1 to match your branding.
+
+## Requirements
+
+iOS 7 or later is required for NSURLSession that is used in everyPay SDK.
 
 ## Integrating the SDK
 
