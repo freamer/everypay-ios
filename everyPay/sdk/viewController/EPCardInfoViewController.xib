@@ -30,13 +30,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-0u-giG" userLabel="CVC">
-                    <rect key="frame" x="20" y="100" width="270" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Expiration" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="md4-94-Ieb" userLabel="Expiration">
-                    <rect key="frame" x="310" y="100" width="270" height="30"/>
+                    <rect key="frame" x="20" y="100" width="270" height="30"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                     </accessibility>
@@ -52,22 +47,27 @@
                         <action selector="doneTapped:" destination="-1" eventType="touchUpInside" id="q0i-jr-lfH"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVC" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4q-0u-giG" userLabel="CVC">
+                    <rect key="frame" x="310" y="100" width="270" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="md4-94-Ieb" firstAttribute="top" secondItem="M3C-BJ-4Vh" secondAttribute="bottom" constant="10" id="25R-L1-5p1"/>
-                <constraint firstAttribute="trailing" secondItem="md4-94-Ieb" secondAttribute="trailing" constant="20" id="2s0-pE-ViW"/>
                 <constraint firstItem="md4-94-Ieb" firstAttribute="width" secondItem="n4q-0u-giG" secondAttribute="width" id="7OE-cx-avV"/>
-                <constraint firstItem="md4-94-Ieb" firstAttribute="leading" secondItem="n4q-0u-giG" secondAttribute="trailing" constant="20" id="9zp-K5-7RM"/>
                 <constraint firstItem="M3C-BJ-4Vh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="DL8-kQ-6RI"/>
+                <constraint firstItem="n4q-0u-giG" firstAttribute="leading" secondItem="md4-94-Ieb" secondAttribute="trailing" constant="20" id="S9i-Hy-cay"/>
                 <constraint firstItem="n4q-0u-giG" firstAttribute="top" secondItem="M3C-BJ-4Vh" secondAttribute="bottom" constant="10" id="Urt-cH-E0R"/>
                 <constraint firstItem="M3C-BJ-4Vh" firstAttribute="top" secondItem="w7N-mW-Tfl" secondAttribute="bottom" constant="10" id="WjC-ha-QTn"/>
                 <constraint firstAttribute="trailing" secondItem="M3C-BJ-4Vh" secondAttribute="trailing" constant="20" id="XKq-VU-c8L"/>
                 <constraint firstAttribute="trailing" secondItem="w7N-mW-Tfl" secondAttribute="trailing" constant="20" id="Y84-Tp-cuY"/>
-                <constraint firstItem="n4q-0u-giG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Z8g-Bu-Iaf"/>
                 <constraint firstAttribute="bottom" secondItem="yfe-Gv-QPR" secondAttribute="bottom" constant="20" id="ejT-KV-OTf"/>
                 <constraint firstItem="w7N-mW-Tfl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="l3p-fg-rbz"/>
+                <constraint firstAttribute="trailing" secondItem="n4q-0u-giG" secondAttribute="trailing" constant="20" id="pjy-B4-SBE"/>
                 <constraint firstItem="w7N-mW-Tfl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="rtH-Cj-Ilz"/>
+                <constraint firstItem="md4-94-Ieb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="x0F-U2-Thd"/>
                 <constraint firstAttribute="centerX" secondItem="yfe-Gv-QPR" secondAttribute="centerX" id="zg7-sa-bAW"/>
             </constraints>
             <point key="canvasLocation" x="454" y="305"/>
