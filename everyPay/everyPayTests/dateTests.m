@@ -22,7 +22,7 @@
     
     // Date with same month/year as now is not passed
     NSDate *now = [NSDate date];
-    XCTAssert([now dateHasPassed]);
+    XCTAssert(![now dateHasPassed]);
     
     NSDate *oldDate = [NSDate dateWithYear:2000 andMonth:1];
     XCTAssert([oldDate dateHasPassed]);

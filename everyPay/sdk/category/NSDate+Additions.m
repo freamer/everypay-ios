@@ -25,7 +25,11 @@
     
     NSDateComponents *nowComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:[NSDate date]];
     NSDateComponents *selfComponents = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
-    BOOL result = nowComponents.year >= selfComponents.year && nowComponents.month >= selfComponents.month;
+    
+    BOOL yearHasPassed = selfComponents.year < nowComponents.year;
+    
+    BOOL result = yearHasPassed || (selfComponents.year == nowComponents.year && selfComponents.month < nowComponents.month);
+
     return result;
 }
 
