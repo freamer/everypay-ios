@@ -32,6 +32,10 @@
     validCard = [[EPCard alloc] initWithName:@"Kaart" number:kValidCardNumber expirationDate:expirationDate andCVC:@"43d2"];
     isValid = [validCard validateCard];
     XCTAssert(isValid == nil, @"Only digits must be left in numbers");
+    
+    validCard = [[EPCard alloc] initWithName:@"Kaart" number:kValidCardNumber expirationDate:[NSDate date] andCVC:@"234"];
+    isValid = [validCard validateCard];
+    XCTAssert(isValid == nil, @"Card with expirationdate today must be valid");
 }
 
 - (void)testCardCreationWithNilValue {
@@ -41,7 +45,7 @@
 }
 
 - (void)testExpiredCard {
-    EPCard *card = [[EPCard alloc] initWithName:@"kaart" number:kValidAmexCardNumber expirationDate:[NSDate date] andCVC:@"2345"];
+    EPCard *card = [[EPCard alloc] initWithName:@"kaart" number:kValidAmexCardNumber expirationDate:[NSDate dateWithTimeIntervalSince1970:0] andCVC:@"2345"];
     NSError *error = [card validateCard];
     XCTAssert(error, @"expired card must be invalid");
 }
