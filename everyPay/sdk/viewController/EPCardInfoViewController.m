@@ -27,12 +27,24 @@ const NSInteger kMaxYear = 2022;
     [self.number setPlaceholder:NSLocalizedString(@"Card number", nil)];
     [self.cvc setPlaceholder:NSLocalizedString(@"CVC", nil)];
     [self.expiration setPlaceholder:NSLocalizedString(@"Expiration", nil)];
+
+
     [self.expiration setDelegate:self];
     [self.expiration setTintColor:[UIColor clearColor]];
     [self createDatePicker];
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
     [self.view addGestureRecognizer:tapRecognizer];
+
+    // Add sample card data to fields
+    [self.name setText:@"Tom Smith"];
+    [self.number setText:@"5169032156782335"];
+    [self.cvc setText:@"643"];
+    
+    NSDate *date = [NSDate dateWithYear:2017 andMonth:1];
+    self.selectedDate = date;
+    NSString *dateString = [date expirationString];
+    [self.expiration setText:dateString];
 }
 
 - (void)createDatePicker {

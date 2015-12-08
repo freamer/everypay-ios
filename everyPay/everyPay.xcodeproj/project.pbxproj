@@ -111,7 +111,9 @@
 				535F0B7C1B8AFA2200DA196C /* everyPayTests */,
 				535F0B611B8AFA2100DA196C /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		535F0B611B8AFA2100DA196C /* Products */ = {
 			isa = PBXGroup;

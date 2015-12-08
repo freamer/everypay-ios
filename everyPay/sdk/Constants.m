@@ -8,9 +8,9 @@
 
 #import "Constants.h"
 
-NSString *const kEveryPayApiTesting = @"https://gw-staging.every-pay.com";
+NSString *const kEveryPayApiTesting = @"https://gw-demo.every-pay.com";
 NSString *const kEveryPayApiLive = @"http://gw.every-pay.com";
-NSString *const kMercantApiTesting = @"https://igwshop-staging.every-pay.com";
+NSString *const kMercantApiTesting = @"https://igwshop-demo.every-pay.com";
 
 NSString *const kKeyAccountId = @"account_id";
 NSString *const kKeyApiUsername = @"api_username";
