@@ -95,7 +95,7 @@
     NSNumber *month = [NSNumber numberWithInteger:[components month]];
     NSNumber *year = [NSNumber numberWithInteger:[components year]];
     
-    NSDictionary *returnDictionary = @{kKeyCardNumber: self.number, kKeyCardYear: year, kKeyCardMonth: month, kKeyCardName: self.name};
+    NSDictionary *returnDictionary = @{kKeyCardNumber: self.number, kKeyCardCVC: self.cvc, kKeyCardYear: year, kKeyCardMonth: month, kKeyCardName: self.name};
     return returnDictionary;
 }
 

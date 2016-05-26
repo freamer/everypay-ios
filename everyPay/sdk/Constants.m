@@ -19,6 +19,7 @@ NSString *const kKeyNonce = @"nonce";
 NSString *const kKeyTimestamp = @"timestamp";
 NSString *const kKeyUserIp = @"user_ip";
 NSString *const kKeyCardNumber = @"cc_number";
+NSString *const kKeyCardCVC = @"cc_verification";
 NSString *const kKeyCardYear = @"cc_year";
 NSString *const kKeyCardMonth = @"cc_month";
 NSString *const kKeyCardName = @"cc_holder_name";

@@ -31,6 +31,7 @@ extern NSString *const kKeyNonce;
 extern NSString *const kKeyTimestamp;
 extern NSString *const kKeyUserIp;
 extern NSString *const kKeyCardNumber;
+extern NSString *const kKeyCardCVC;
 extern NSString *const kKeyCardYear;
 extern NSString *const kKeyCardMonth;
 extern NSString *const kKeyCardName;
