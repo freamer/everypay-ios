@@ -18,7 +18,7 @@
 /** 
  Get merchant EveryPay user and communication security data.
  */
-+ (void)getMerchantDataWithSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure;
++ (void)getMerchantDataWithSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure apiVersion:(NSString *)apiVersion;
 
 /** 
  Send payment to merchant server

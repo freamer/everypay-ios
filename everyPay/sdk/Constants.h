@@ -23,6 +23,9 @@ extern NSString *const kEveryPayApiTesting;
 extern NSString *const kEveryPayApiLive;
 extern NSString *const kMercantApiTesting;
 
+// browserflow urls
+extern NSString *const kBrowserFlowEndURLPrefix;
+extern NSString *const kBrowserFlowInitURL;
 // Json keys
 extern NSString *const kKeyAccountId;
 extern NSString *const kKeyApiUsername;
@@ -38,6 +41,13 @@ extern NSString *const kKeyCardName;
 extern NSString *const kKeySingleUseToken;
 extern NSString *const kKeyEncryptedToken;
 extern NSString *const kKeyEncryptedPaymentInstrument;
+extern NSString *const kPaymentState;
+extern NSString *const kPaymentStateAuthorised;
+extern NSString *const kPaymentStateWaiting3DsResponse;
+extern NSString *const kKeyPaymentReference;
+extern NSString *const kKeySecureCodeOne;
+extern NSString *const kParamHmac;
+extern NSString *const kKeyApiVersion;
 
 extern NSString *const kKeyErrors;
 extern NSString *const kKeyError;

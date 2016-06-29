@@ -52,6 +52,12 @@
  @param merchantInfo is dictionary containing merchand EveryPay username, account and security info.
  
  */
-+ (void)sendCard:(EPCard *)card withMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(StringSuccessBlock)success andError:(ArrayBlock)failure;
++ (void)sendCard:(EPCard *)card withMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(DictionarySuccessBlock)success andError:(ArrayBlock)failure;
+
++ (void)encryptedPaymentInstrumentsConfirmedWithPaymentReference:(NSString *)paymentReference
+                                                            hmac:(NSString *)hmac
+                                                      apiVersion:(NSString *)apiVersion
+                                                     withSuccess:(DictionarySuccessBlock)success
+                                                        andError:(ArrayBlock)failure;
 
 @end

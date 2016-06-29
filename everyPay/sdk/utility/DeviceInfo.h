@@ -14,11 +14,13 @@
 
 @interface DeviceInfo : NSObject
 
-/** 
+
+/**
  Collects different device data.
  Collects device model, os and kernel versions.
- @return NSData with device info
+ @return NSDictionary with device info
+
  */
-+ (NSData *)deviceInfoData;
++ (NSDictionary *)deviceInfoDictionary;
 
 @end

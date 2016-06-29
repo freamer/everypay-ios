@@ -8,9 +8,15 @@
 
 #import "Constants.h"
 
-NSString *const kEveryPayApiTesting = @"https://gw-demo.every-pay.com";
+NSString *const kEveryPayApiTesting = @"https://gw-staging.every-pay.com";
 NSString *const kEveryPayApiLive = @"http://gw.every-pay.com";
-NSString *const kMercantApiTesting = @"https://igwshop-demo.every-pay.com";
+NSString *const kMercantApiTesting = @"https://igwshop-staging.every-pay.com";
+
+NSString *const kBrowserFlowEndURLPrefix = @"https://gw-staging.every-pay.com/authentication3ds";
+NSString *const kBrowserFlowInitURL = @"https://gw-staging.every-pay.com/authentication3ds/new";
+NSString *const kPaymentState = @"payment_state";
+NSString *const kPaymentStateAuthorised = @"payment_state=authorised";
+NSString *const kPaymentStateWaiting3DsResponse = @"waiting_for_3ds_response";
 
 NSString *const kKeyAccountId = @"account_id";
 NSString *const kKeyApiUsername = @"api_username";
@@ -29,5 +35,9 @@ NSString *const kKeyError = @"error";
 NSString *const kKeyMessage = @"message";
 NSString *const kKeyCode = @"code";
 NSString *const kKeyEncryptedToken = @"cc_token_encrypted";
+NSString *const kKeyPaymentReference = @"payment_reference";
+NSString *const kKeySecureCodeOne = @"secure_code_one";
+NSString *const kParamHmac = @"mobile_3ds_hmac";
+NSString *const kKeyApiVersion = @"api_version";
 
 NSString *const kKeyEncryptedPaymentInstrument = @"encrypted_payment_instrument";

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "EPCardInfoViewController.h"
+#import "PaymentWebViewController.h"
 
-@interface ViewController : UIViewController <EPCardInfoViewControllerDelegate>
+@interface ViewController : UIViewController <EPCardInfoViewControllerDelegate, PaymentWebViewControllerDelegate>
 
 @end
