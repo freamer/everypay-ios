@@ -11,5 +11,6 @@
 #import "PaymentWebViewController.h"
 
 @interface ViewController : UIViewController <EPCardInfoViewControllerDelegate, PaymentWebViewControllerDelegate>
-
+@property (nonatomic, copy) NSString *merchantApiBaseUrl;
+@property (nonatomic, copy) NSString *everypayApiBaseUrl;
 @end

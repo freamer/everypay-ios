@@ -8,17 +8,18 @@
 
 #import "EPMerchantApi.h"
 #import "DeviceInfo.h"
+#import "ViewController.h"
+#import "EPSession.h"
 
 NSString *const kGetMerchantInfoPath = @"/merchant_mobile_payments/generate_token_api_parameters";
 NSString *const kSendPaymentPath = @"/merchant_mobile_payments/pay";
 NSString *const kApiVersion = @"api_version";
 NSString *const kAccountId = @"account_id";
-NSString *const kTestAccountId = @"EUR3D1";
 
 @implementation EPMerchantApi
 
-+ (void)getMerchantDataWithSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure apiVersion:(NSString *)apiVersion {
-    NSURL *merchantApiBaseUrl = [NSURL URLWithString:kMercantApiTesting];
++ (void)getMerchantDataWithSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure apiVersion:(NSString *)apiVersion accountId:(NSString *)accountId{
+    NSURL *merchantApiBaseUrl = [NSURL URLWithString:[EPSession sharedInstance].merchantApiBaseUrl];
     NSURL *url = [NSURL URLWithString:kGetMerchantInfoPath relativeToURL:merchantApiBaseUrl];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
@@ -30,7 +31,7 @@ NSString *const kTestAccountId = @"EUR3D1";
 
     NSMutableDictionary *requestDictionary = [[NSMutableDictionary alloc] init];
     [requestDictionary setValue:apiVersion forKey:kApiVersion];
-    [requestDictionary setValue:kTestAccountId forKey: kAccountId];
+    [requestDictionary setValue:accountId forKey: kAccountId];
     NSData *requestData = [EPMerchantApi convertToDataWithDictionary:requestDictionary];
     NSLog(@"Request body %@", [[NSString alloc] initWithData:requestData encoding:NSUTF8StringEncoding]);
     NSURLSessionUploadTask *uploadTask = [[NSURLSession sharedSession] uploadTaskWithRequest:request fromData:requestData completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -55,7 +56,7 @@ NSString *const kTestAccountId = @"EUR3D1";
 }
 
 + (void)sendPaymentWithToken:(NSString *)token andMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(DictionarySuccessBlock)success andError:(FailureBlock)failure {
-    NSURL *merchantApiBaseUrl = [NSURL URLWithString:kMercantApiTesting];
+    NSURL *merchantApiBaseUrl = [NSURL URLWithString:[EPSession sharedInstance].merchantApiBaseUrl];
     NSURL *url = [NSURL URLWithString:kSendPaymentPath relativeToURL:merchantApiBaseUrl];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];

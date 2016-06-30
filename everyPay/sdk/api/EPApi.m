@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "DeviceInfo.h"
 #import "ErrorExtractor.h"
+#import "EPSession.h"
 
 NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
 
@@ -17,7 +18,7 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
 @implementation EPApi
 
 + (void)sendCard:(EPCard *)card withMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(DictionarySuccessBlock)success andError:(ArrayBlock)failure {
-    NSURL *baseApiUrl = [NSURL URLWithString:kEveryPayApiTesting];
+    NSURL *baseApiUrl = [NSURL URLWithString:[EPSession sharedInstance].everyPayApiBaseUrl];
     NSURL *url = [NSURL URLWithString:kSendCardDetailsPath relativeToURL:baseApiUrl];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = @"POST";
@@ -88,7 +89,7 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
 + (void)encryptedPaymentInstrumentsConfirmedWithPaymentReference:(NSString *)paymentReference hmac:(NSString *)hmac apiVersion:(NSString *)apiVersion withSuccess:(DictionarySuccessBlock)success andError:(ArrayBlock)failure {
     NSURLComponents *components = [NSURLComponents new];
     [components setScheme:@"https"];
-    [components setHost:@"gw-staging.every-pay.com"];
+    [components setHost:[EPSession sharedInstance].everypayApiHost];
     [components setPath:[NSString stringWithFormat:@"/encrypted_payment_instruments/%@", paymentReference]];
     NSURLQueryItem *mobile3DsHmac = [NSURLQueryItem queryItemWithName:kParamHmac value:hmac];
     NSURLQueryItem *apiVer = [NSURLQueryItem queryItemWithName:kKeyApiVersion value:apiVersion];

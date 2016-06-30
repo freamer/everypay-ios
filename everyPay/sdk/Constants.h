@@ -19,9 +19,13 @@ typedef void (^FailureBlock)(NSError *error);
 typedef void (^ArrayBlock)(NSArray *array);
 
 // base urls
-extern NSString *const kEveryPayApiTesting;
+extern NSString *const kEveryPayApiStaging;
 extern NSString *const kEveryPayApiLive;
-extern NSString *const kMercantApiTesting;
+extern NSString *const kMercantApiStaging;
+extern NSString *const kEveryPayApiDemo;
+extern NSString *const kMerchantApiDemo;
+extern NSString *const kEveryPayApiStagingHost;
+extern NSString *const kEveryPayApiDemoHost;
 
 // browserflow urls
 extern NSString *const kBrowserFlowEndURLPrefix;
@@ -53,3 +57,4 @@ extern NSString *const kKeyErrors;
 extern NSString *const kKeyError;
 extern NSString *const kKeyMessage;
 extern NSString *const kKeyCode;
+extern NSString *const kAuthorised;

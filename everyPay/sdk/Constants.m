@@ -8,13 +8,19 @@
 
 #import "Constants.h"
 
-NSString *const kEveryPayApiTesting = @"https://gw-staging.every-pay.com";
+NSString *const kEveryPayApiStaging = @"https://gw-staging.every-pay.com";
 NSString *const kEveryPayApiLive = @"http://gw.every-pay.com";
-NSString *const kMercantApiTesting = @"https://igwshop-staging.every-pay.com";
+NSString *const kMercantApiStaging = @"https://igwshop-staging.every-pay.com";
+NSString *const kEveryPayApiDemo = @"https://gw-demo.every-pay.com";
+NSString *const kMerchantApiDemo = @"https://igwshop-demo.every-pay.com";
+NSString *const kEveryPayApiStagingHost = @"gw-staging.every-pay.com";
+NSString *const kEveryPayApiDemoHost = @"gw-demo.every-pay.com";
+
 
 NSString *const kBrowserFlowEndURLPrefix = @"https://gw-staging.every-pay.com/authentication3ds";
 NSString *const kBrowserFlowInitURL = @"https://gw-staging.every-pay.com/authentication3ds/new";
 NSString *const kPaymentState = @"payment_state";
+NSString *const kAuthorised = @"authorised";
 NSString *const kPaymentStateAuthorised = @"payment_state=authorised";
 NSString *const kPaymentStateWaiting3DsResponse = @"waiting_for_3ds_response";
 

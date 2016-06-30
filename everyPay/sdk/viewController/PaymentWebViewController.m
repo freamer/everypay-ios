@@ -8,11 +8,12 @@
 
 #import "PaymentWebViewController.h"
 #import "Constants.h"
+#import "EPSession.h"
 
 @interface PaymentWebViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, copy) NSString *paymentReference;
-@property (nonatomic) BOOL *isBrowserFlowEndUrlReached;
+@property (nonatomic) BOOL isBrowserFlowEndUrlReached;
 @property (nonatomic, copy) NSString *secureCodeOne;
 @property (nonatomic, copy) NSString *hmac;
 
@@ -38,7 +39,7 @@
 - (NSURL *)buildInitURLForWebViewWithPaymentReference:(NSString *)paymentReference secureCodeOne:(NSString *)secureCodeOne hmac:(NSString *)hmac {
     NSURLComponents *components = [NSURLComponents new];
     [components setScheme:@"https"];
-    [components setHost:@"gw-staging.every-pay.com"];
+    [components setHost:[EPSession sharedInstance].everypayApiHost];
     [components setPath:@"/authentication3ds/new"];
     NSURLQueryItem *paymentRef = [NSURLQueryItem queryItemWithName:kKeyPaymentReference value:paymentReference];
     NSURLQueryItem *secureCode = [NSURLQueryItem queryItemWithName:kKeySecureCodeOne value:secureCodeOne];

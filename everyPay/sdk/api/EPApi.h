@@ -31,7 +31,6 @@
  */
 
 @interface EPApi : NSObject
-
 /** 
  Send card and merchant data to EveryPay server. 
  Merchant info is a dictionary composed of keys defined as string constants:
