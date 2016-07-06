@@ -6,11 +6,11 @@
 //  Copyright © 2016 MobiLab. All rights reserved.
 //
 
-#import "PaymentWebViewController.h"
+#import "EpAuthenticationWebViewController.h"
 #import "Constants.h"
 #import "EPSession.h"
 
-@interface PaymentWebViewController ()
+@interface EPAuthenticationWebViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, copy) NSString *paymentReference;
 @property (nonatomic) BOOL isBrowserFlowEndUrlReached;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation PaymentWebViewController
+@implementation EPAuthenticationWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,15 +64,13 @@
             NSString *urlWithoutPrefix = [urlString stringByReplacingOccurrencesOfString:kBrowserFlowEndURLPrefix withString:@""];
             NSString *paymentReference = [urlWithoutPrefix componentsSeparatedByString:@"?"][0];
             if (self.delegate) {
-                [self.delegate paymentSucceededWithPayentReference:paymentReference hmac:_hmac];
+                [self.delegate authenticationSucceededWithPayentReference:paymentReference hmac:_hmac];
             }
-            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSInteger errorCode = 999;
             if (self.delegate) {
-                [self.delegate paymentFailedWithErrorCode:errorCode];
+                [self.delegate authenticationFailedWithErrorCode:errorCode];
             }
-            [self.navigationController popViewControllerAnimated:YES];
         }
     }
     return YES;
@@ -90,7 +88,7 @@
     if(![parent isEqual:self.parentViewController]) {
         NSLog(@"Back pressed");
         if(!self.isBrowserFlowEndUrlReached) {
-            [self.delegate paymentCanceled];
+            [self.delegate authenticationCanceled];
         }
     }
 }

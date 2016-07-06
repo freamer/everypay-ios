@@ -19,6 +19,7 @@
  */
 - (void)cardInfoViewController:(UIViewController *)controller didEnterInfoForCard:(EPCard *)card;
 
+
 @end
 
 /** 

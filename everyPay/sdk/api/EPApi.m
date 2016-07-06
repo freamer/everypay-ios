@@ -117,9 +117,6 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
                         NSLog(@"Error processing payment: %@", errors);
                         failure(errors);
                     } else {
-                        /**
-                         
-                         */
                         NSLog(@"Encrypted payment instruments  confirmed response %@", responseDictionary);
                         NSDictionary *instruments = [responseDictionary objectForKey:kKeyEncryptedPaymentInstrument];
                         success(instruments);

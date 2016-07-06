@@ -86,10 +86,10 @@
 }
 
 - (void)startWebViewWithPaymentReference:(NSString *)paymentReference secureCodeOne:(NSString *)secureCodeOne hmac:(NSString *)hmac {
-    PaymentWebViewController *paymentWebView = [[PaymentWebViewController alloc] initWithNibName:NSStringFromClass([PaymentWebViewController class]) bundle:nil];
-    [paymentWebView setDelegate:self];
-    [paymentWebView addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];
-    [self.navigationController pushViewController:paymentWebView animated:YES];
+    EPAuthenticationWebViewController *authenticationWebView = [[EPAuthenticationWebViewController alloc] initWithNibName:NSStringFromClass([EPAuthenticationWebViewController class]) bundle:nil];
+    [authenticationWebView setDelegate:self];
+    [authenticationWebView addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];
+    [self.navigationController pushViewController:authenticationWebView animated:YES];
 }
 - (void)showAlertWithError:(NSError *)error {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Note" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
@@ -104,7 +104,7 @@
 
 #pragma mark - CardInfoViewControllerDelegate
 - (void)cardInfoViewController:(UIViewController *)controller didEnterInfoForCard:(EPCard *)card {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToViewController:self animated:YES];
     [self showChooseApiBaseUrlActionSheetWithCard:card];
     
 }
@@ -118,15 +118,17 @@
     [self appendProgressLog:@"\n"];
 }
 
-- (void)paymentCanceled {
+- (void)authenticationCanceled {
     [self showAlertWithError:[NSError errorWithDomain:@"3Ds authentication canceled" code:1000 userInfo:nil]];
 }
-- (void)paymentFailedWithErrorCode:(NSInteger)errorCode {
+- (void)authenticationFailedWithErrorCode:(NSInteger)errorCode {
+    [self.navigationController popToViewController:self animated:YES];
     NSLog(@"payment Failed with code %ld", (long)errorCode);
     [self showAlertWithError:[NSError errorWithDomain:@"3Ds authentication failed" code:errorCode userInfo:nil]];
 }
 
-- (void)paymentSucceededWithPayentReference:(NSString *)paymentReference hmac:(NSString *)hmac {
+- (void)authenticationSucceededWithPayentReference:(NSString *)paymentReference hmac:(NSString *)hmac {
+    [self.navigationController popToViewController:self animated:YES];
     NSLog(@"payment succeeded with reference %@", paymentReference);
     [self appendProgressLog:@"Done"];
     [self appendProgressLog:@"Confirming 3DS with Everypay server ...."];
@@ -135,7 +137,7 @@
         [self appendProgressLog:@"Done"];
         [self payWithToken:token andMerchantInfo:_merchantInfo];
     } andError:^(NSArray *array) {
-        
+        [self showAlertWithError:array[0]];
     }];
 }
 
@@ -186,6 +188,8 @@
         [weakSelf presentViewController:alertController animated:YES completion:nil];
     });
 }
-
+- (void)closeWebViewController{
+    [self.navigationController popToViewController:self animated:YES];
+}
 
 @end

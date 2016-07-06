@@ -31,8 +31,8 @@
 		535F0BC61B8C951900DA196C /* stringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BC51B8C951900DA196C /* stringTests.m */; };
 		535F0BC81B8C97BD00DA196C /* dateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 535F0BC71B8C97BD00DA196C /* dateTests.m */; };
 		AE2FFF721D2544220031DB5E /* EPSession.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2FFF711D2544220031DB5E /* EPSession.m */; };
-		AEFE95391D228CB300A91BF2 /* PaymentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE95371D228CB300A91BF2 /* PaymentWebViewController.m */; };
-		AEFE953A1D228CB300A91BF2 /* PaymentWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFE95381D228CB300A91BF2 /* PaymentWebViewController.xib */; };
+		AEFE95391D228CB300A91BF2 /* EPAuthenticationWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFE95371D228CB300A91BF2 /* EPAuthenticationWebViewController.m */; };
+		AEFE953A1D228CB300A91BF2 /* EPAuthenticationWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEFE95381D228CB300A91BF2 /* EPAuthenticationWebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,9 +88,9 @@
 		535F0BC91B8DC12E00DA196C /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		AE2FFF701D2544220031DB5E /* EPSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPSession.h; sourceTree = "<group>"; };
 		AE2FFF711D2544220031DB5E /* EPSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPSession.m; sourceTree = "<group>"; };
-		AEFE95361D228CB300A91BF2 /* PaymentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentWebViewController.h; path = sdk/viewController/PaymentWebViewController.h; sourceTree = SOURCE_ROOT; };
-		AEFE95371D228CB300A91BF2 /* PaymentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaymentWebViewController.m; path = sdk/viewController/PaymentWebViewController.m; sourceTree = SOURCE_ROOT; };
-		AEFE95381D228CB300A91BF2 /* PaymentWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PaymentWebViewController.xib; path = sdk/viewController/PaymentWebViewController.xib; sourceTree = SOURCE_ROOT; };
+		AEFE95361D228CB300A91BF2 /* EPAuthenticationWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPAuthenticationWebViewController.h; path = sdk/viewController/EPAuthenticationWebViewController.h; sourceTree = SOURCE_ROOT; };
+		AEFE95371D228CB300A91BF2 /* EPAuthenticationWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPAuthenticationWebViewController.m; path = sdk/viewController/EPAuthenticationWebViewController.m; sourceTree = SOURCE_ROOT; };
+		AEFE95381D228CB300A91BF2 /* EPAuthenticationWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EPAuthenticationWebViewController.xib; path = sdk/viewController/EPAuthenticationWebViewController.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,9 +247,9 @@
 				535F0BC01B8C692100DA196C /* EPCardInfoViewController.h */,
 				535F0BC11B8C692100DA196C /* EPCardInfoViewController.m */,
 				535F0BC21B8C692100DA196C /* EPCardInfoViewController.xib */,
-				AEFE95361D228CB300A91BF2 /* PaymentWebViewController.h */,
-				AEFE95371D228CB300A91BF2 /* PaymentWebViewController.m */,
-				AEFE95381D228CB300A91BF2 /* PaymentWebViewController.xib */,
+				AEFE95361D228CB300A91BF2 /* EPAuthenticationWebViewController.h */,
+				AEFE95371D228CB300A91BF2 /* EPAuthenticationWebViewController.m */,
+				AEFE95381D228CB300A91BF2 /* EPAuthenticationWebViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				535F0B8E1B8AFADF00DA196C /* ViewController.xib in Resources */,
 				535F0BA01B8B269A00DA196C /* Localizable.strings in Resources */,
 				535F0B711B8AFA2100DA196C /* Images.xcassets in Resources */,
-				AEFE953A1D228CB300A91BF2 /* PaymentWebViewController.xib in Resources */,
+				AEFE953A1D228CB300A91BF2 /* EPAuthenticationWebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +368,7 @@
 				535F0BAB1B8B36E100DA196C /* Constants.m in Sources */,
 				535F0B961B8B083200DA196C /* NSString+Additions.m in Sources */,
 				535F0B921B8AFCB600DA196C /* EPCard.m in Sources */,
-				AEFE95391D228CB300A91BF2 /* PaymentWebViewController.m in Sources */,
+				AEFE95391D228CB300A91BF2 /* EPAuthenticationWebViewController.m in Sources */,
 				535F0BB21B8B3CFD00DA196C /* EPApi.m in Sources */,
 				535F0B9D1B8B166C00DA196C /* NSError+Additions.m in Sources */,
 				535F0B9A1B8B0C4900DA196C /* Luhn.m in Sources */,
@@ -500,6 +500,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = everyPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -513,6 +514,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = everyPay/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
