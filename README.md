@@ -24,7 +24,7 @@ Example implementation is provided for steps 2 and 4, even if they are likely to
 
 ## Requirements
 
-iOS 7 or later is required for NSURLSession that is used in everyPay SDK.
+iOS 8 or later is required for NSURLSession that is used in everyPay SDK.
 
 ## Integrating the SDK
 
@@ -53,6 +53,10 @@ Open a EPCardInfoViewController from your viewcontroller:
 	EPCardInfoViewController *cardInfoViewController = [[EPCardInfoViewController alloc] initWithNibName:NSStringFromClass([EPCardInfoViewController class]) bundle:nil];
     [cardInfoViewController setDelegate:self];
     [self presentViewController:cardInfoViewController animated:YES completion:nil];
+    //or if you are using navigationController
+     [self.navigationController pushViewController:cardInfoViewController animated:YES];
+    cardInfoViewController.edgesForExtendedLayout = UIRectEdgeNone;
+
 ```
 
 Let your viewcontroller implement EPCardViewControllerDelegate method `cardInfoViewController:didEnterInfoForCard:`.
@@ -61,6 +65,9 @@ After user has entered all needed data this delegate method will be called with 
 ```objectivec
 - (void)cardInfoViewController:(UIViewController *)controller didEnterInfoForCard:(EPCard *)card {
     [self dismissViewControllerAnimated:YES completion:nil];
+    //Or for navigation contoller
+    [self.navigationController popToViewController:self animated:YES];
+    
     [self sendCardInfoToMerchant:card];
 }
 ```
@@ -69,12 +76,23 @@ After user has entered all needed data this delegate method will be called with 
 
 Call `sendCard:withMerchantInfo:withSuccess:andError:`, where `merchantinfo` is dictionary containing your EveryPay username, account, ip and security info:
 ```
+//For non-3Ds
 "account_id" = EUR1;
 "api_username" = apiuserame;
 hmac = 6c893c8642176b401e918ba61a47123456780c1d;
 nonce = b58a1ff58cd9817347e206f30fcb82d5;
 timestamp = 1440506937;
 "user_ip" = "100.100.100.100";
+
+//For 3Ds
+"account_id" = EUR3D1;
+"api_username" = apiuserame;
+hmac = 6c893c8642176b401e918ba61a47123456780c1d;
+nonce = b58a1ff58cd9817347e206f30fcb82d5;
+timestamp = 1440506937;
+"user_ip" = "100.100.100.100";
+"payment_state"="waiting_for_3ds_response"
+"order_reference" =85928hshjsdhjfkhkjh4;
 ```
 
 ```objectivec
@@ -85,8 +103,57 @@ timestamp = 1440506937;
     }];
 ```
 
-Success block will be called with encrypted token, failure block will contain array of NSError objects. Both blocks will be called on main thread.
+Success block will be called with encrypted token if it's non-3Ds payment. For 3Ds payment order_reference and payment_state are returned, failure block will contain array of NSError objects. Both blocks will be called on main thread.
+### Supporting 3Ds authentication
 
+Open a EPAuthenticationWebViewController from your viewcontroller:
+
+```objectivec
+ EPAuthenticationWebViewController *authenticationWebViewController = [[EPAuthenticationWebViewController alloc] initWithNibName:NSStringFromClass([EPAuthenticationWebViewController class]) bundle:nil];
+    [authenticationWebViewController setDelegate:self];
+    [authenticationWebViewController addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];
+      [self presentViewController:authenticationWebViewController animated:YES completion:nil];
+    //or if you are using navigationController
+     [self.navigationController pushViewController:authenticationWebViewController animated:YES];
+ 
+```
+**NB! you have to call `addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];` in order for webview to navigate to correct URL.**
+Let your viewcontroller implement EPAuthenticationWebViewControllerDelegate methods
+
+**NB! You have to close the EPAuthenticationViewController inside every delegate method. It will not close automatically!**
+
+`authenticationSucceededWithPaymentReference:`
+```objectivec
+- (void)authenticationSucceededWithPaymentReference:(NSString *)paymentReference {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //Or for navigation contoller
+    [self.navigationController popToViewController:self animated:YES];
+      [EPApi encryptedPaymentInstrumentsConfirmedWithPaymentReference:paymentReference hmac:hmac apiVersion:apiVersion withSuccess:^(NSDictionary *dictionary) {
+        NSString *token = [dictionary objectForKey:kKeyEncryptedToken];
+        [self payWithToken:token andMerchantInfo:merchantInfo];
+    } andError:^(NSArray *array) {
+        // Show error. Getting error like that array[0];
+    }];
+
+}
+```
+
+`authenticationFailedWithErrorCode:`
+```objectivec
+- (void)authenticationFailedWithErrorCode:(NSInteger)errorCode {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //Or for navigation contoller
+    [self.navigationController popToViewController:self animated:YES];
+    //Display error here...
+}
+```
+
+`authenticationCanceled:`
+```objectivec
+- (void)authenticationCanceled {
+   //Show canceling error here or do nothing...
+}
+```
 ## Customising the app <-> merchant server communication steps
 
 The SDK includes example implementation for the app - merchant API calls, with the minimal required data for a payment. However, most apps using EveryPay will want to replace the communication step between the app and your server - for example to add your own user accounts, save shopping baskets or subscription plans.
