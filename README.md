@@ -54,7 +54,7 @@ Open a EPCardInfoViewController from your viewcontroller:
     [cardInfoViewController setDelegate:self];
     [self presentViewController:cardInfoViewController animated:YES completion:nil];
     //or if you are using navigationController
-     [self.navigationController pushViewController:cardInfoViewController animated:YES];
+    [self.navigationController pushViewController:cardInfoViewController animated:YES];
     cardInfoViewController.edgesForExtendedLayout = UIRectEdgeNone;
 
 ```
@@ -96,8 +96,22 @@ timestamp = 1440506937;
 ```
 
 ```objectivec
-[EPApi sendCard:card withMerchantInfo:merchantInfo withSuccess:^(NSString *token) {
+[EPApi sendCard:card withMerchantInfo:merchantInfo withSuccess:^(NSString *token) { 
+    NSString *paymentState = [responseDictionary objectForKey:kPaymentState];
+    if([paymentState isEqualToString:kAuthorised] && [accountId isEqualToString:@"EUR1"]){
+    	NSString *token = [responseDictionary objectForKey:kKeyEncryptedToken];
+        [self appendProgressLog:@"Done"];
         [self payWithToken:token andMerchantInfo:merchantInfo];
+    } else if ([paymentState isEqualToString:kPaymentStateWaiting3DsResponse] && [accountId isEqualToString:@"EUR3D1"]) {
+        [self appendProgressLog:@"Done"];
+        NSString *paymentReference = [responseDictionary objectForKey:kKeyPaymentReference];
+        NSString *secureCodeOne = [responseDictionary objectForKey:kKeySecureCodeOne];
+        NSString *hmac = [merchantInfo objectForKey:kKeyHmac];
+        [self appendProgressLog:@"Starting 3DS authentication..."];
+        [self startWebViewWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];
+    } else {
+        [self showAlertWithError:[NSError errorWithDomain:@"Unknown account id or payment state" code:1001 userInfo:nil]];
+    }
     } andError:^(NSArray *errors) {
         [self showAlertWithError:[errors firstObject]];
     }];
@@ -112,9 +126,9 @@ Open a EPAuthenticationWebViewController from your viewcontroller:
  EPAuthenticationWebViewController *authenticationWebViewController = [[EPAuthenticationWebViewController alloc] initWithNibName:NSStringFromClass([EPAuthenticationWebViewController class]) bundle:nil];
     [authenticationWebViewController setDelegate:self];
     [authenticationWebViewController addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];
-      [self presentViewController:authenticationWebViewController animated:YES completion:nil];
+    [self presentViewController:authenticationWebViewController animated:YES completion:nil];
     //or if you are using navigationController
-     [self.navigationController pushViewController:authenticationWebViewController animated:YES];
+    [self.navigationController pushViewController:authenticationWebViewController animated:YES];
  
 ```
 **NB! you have to call `addURLParametersWithPaymentReference:paymentReference secureCodeOne:secureCodeOne hmac:hmac];` in order for webview to navigate to correct URL.**
@@ -128,8 +142,8 @@ Let your viewcontroller implement EPAuthenticationWebViewControllerDelegate meth
     [self dismissViewControllerAnimated:YES completion:nil];
     //Or for navigation contoller
     [self.navigationController popToViewController:self animated:YES];
-      [EPApi encryptedPaymentInstrumentsConfirmedWithPaymentReference:paymentReference hmac:hmac apiVersion:apiVersion withSuccess:^(NSDictionary *dictionary) {
-        NSString *token = [dictionary objectForKey:kKeyEncryptedToken];
+    [EPApi encryptedPaymentInstrumentsConfirmedWithPaymentReference:paymentReference hmac:hmac apiVersion:apiVersion withSuccess:^(NSDictionary *dictionary) {
+    	NSString *token = [dictionary objectForKey:kKeyEncryptedToken];
         [self payWithToken:token andMerchantInfo:merchantInfo];
     } andError:^(NSArray *array) {
         // Show error. Getting error like that array[0];
