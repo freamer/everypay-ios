@@ -8,7 +8,7 @@
 
 #import "Constants.h"
 
-NSString *const kEveryPayApiStaging = @"https://gw-staging.every-pay.com";
+NSString *const kEveryPayApiStaging = @"https://gw-demo.every-pay.com";
 NSString *const kEveryPayApiLive = @"http://gw.every-pay.com";
 NSString *const kMercantApiStaging = @"https://igwshop-staging.every-pay.com";
 NSString *const kEveryPayApiDemo = @"https://gw-demo.every-pay.com";
