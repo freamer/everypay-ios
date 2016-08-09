@@ -16,7 +16,7 @@ NSString *const kSendCardDetailsPath = @"encrypted_payment_instruments";
 @implementation EPApi
 
 + (void)sendCard:(EPCard *)card withMerchantInfo:(NSDictionary *)merchantInfo withSuccess:(StringSuccessBlock)success andError:(ArrayBlock)failure {
-    NSURL *baseApiUrl = [NSURL URLWithString:kEveryPayApiTesting];
+    NSURL *baseApiUrl = [NSURL URLWithString:kEveryPayApiLive];
     NSURL *url = [NSURL URLWithString:kSendCardDetailsPath relativeToURL:baseApiUrl];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.HTTPMethod = @"POST";
